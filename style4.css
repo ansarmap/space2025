@@ -1,0 +1,26 @@
+body{
+    margin: 0;
+    background-color: #1d1e22;
+  }
+  #parallax {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url(http://192.168.1.135:8005/spacelement8.png), url(http://192.168.1.135:8005/spacelement4.png), url(http://192.168.1.135:8005/spacelement7.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position: 100% 100%;
+  }
+  h1 {
+    position: absolute;
+    top: 47%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-shadow: 0 0 7px #fff, 0 0 20px rgb(0, 119, 255), 0 0 30px rgb(0, 123, 255), 0 0 40px #002aff, 0 0 70px #002fff, 0 0 80px rgb(0, 26, 255), 0 0 100px #3700ff, 0 0 150px #4000ff;
+
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-transform: uppercase;
+    opacity: .3;
+    font-size: 70px;
+  }
