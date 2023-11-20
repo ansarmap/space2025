@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="style3.css">
+		<link rel="stylesheet" href="style4.css">
+		<style>
+		body {
+		  height: 7500px;
+		}
+		body {
+    	scrollbar-width: thin; /* Creates space for the scrollbar */
+		}
+		button {
+		  position: fixed;
+		}
+		</style>
+		</head>
+<head>
+    <title>Beautiful Galaxy</title>
+    <style>
+		
+		@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+        
+		body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #000;
+            overflow: auto;
+            position: relative; 
+        }
+		.explore-button::before {
+            content: 'Explore'; /* Unicode character for down arrow */
+            display: block;
+            margin-top: 2px;
+        }
+		body::-webkit-scrollbar-thumb {
+			background: #888; /* Change this as per your design */
+		}
+		body::-webkit-scrollbar-track {
+			background: transparent; /* Change this as per your design */
+		}
+		.explore-button {
+            position: absolute;
+			bottom: 4%;
+			font-family: 'Poppins', sans-serif;
+			left: 46%;
+			transition: opacity 0.5s ease-in-out;
+			font-size: 24px;
+			text-align: center;
+			color: #fff;
+			cursor: pointer;
+			transition: transform 1.5s ease;
+        }
+		.image-container::-webkit-scrollbar {
+    		width: 0;
+			height: 0; /* Adjust the width to make it effectively invisible */
+		}
+		
+        
+        .image-container {
+            position: relative;
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 10px;
+			display: block;
+			transition: transform 0.5s ease-in-out;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); 
+            overflow: auto;
+
+        }
+        .image-container img {
+            width: 100%;
+            height: 100%;
+			object-fit: cover;
+			transition: transform 0.5s ease-in-out;
+            border-radius: 10px;
+			overflow: auto; 
+
+            display: block;
+        }
+		.text-overlay1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 24px;
+            font-weight: bold;
+			transition: scale 1.5s ease;
+            letter-spacing: 1px;
+            line-height: 1.3;
+            text-align: center;
+            text-transform: uppercase; 
+            position: absolute;
+            top: 50%;
+			
+            left: 50%;
+            transform: translate(-50%, -400%);
+            color: white;
+            text-shadow: 0 0 7px #fff, 0 0 20px #a600ff, 0 0 30px rgb(187, 0, 255), 0 0 40px #a600ff, 0 0 70px #c800ff, 0 0 80px rgb(195, 0, 255), 0 0 100px #bb00ff, 0 0 150px #9d00ff;
+            z-index: 10;
+            pointer-events: none;
+			
+			text-rendering: optimizeLegibility;
+			
+        }
+		
+		.image-container:hover img {
+            transform: scale(1.1); /* Change the scale factor as needed */
+        }
+		
+        .text-overlay {
+            font-family: 'Poppins', sans-serif;
+            font-size: 72px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            line-height: 1.2;
+			-webkit-background-clip: text;
+            background-clip: text;
+            text-align: center;
+            text-transform: uppercase; 
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff; 
+            text-shadow: 0 0 7px #fff, 0 0 20px #a600ff, 0 0 30px rgb(187, 0, 255), 0 0 40px #a600ff, 0 0 70px #c800ff, 0 0 80px rgb(195, 0, 255), 0 0 100px #bb00ff, 0 0 150px #9d00ff;
+            z-index: 10;
+            pointer-events: none;
+			text-rendering: optimizeLegibility;
+			
+        }
+		.main {
+			top: 2%;
+			bottom: 95%;
+			left: 15%;
+			font-family: 'Poppins', sans-serif;
+			padding: 2px 20px;
+            background-color: transparent;
+            color: #ffffff;
+            border: none;
+            border-radius: 10px;
+			text-align: center;
+            font-size: 18px;
+			text-shadow: 0 0 7px rgb(0, 0, 0), 0 0 20px #000000, 0 0 30px rgb(0, 0, 0), 0 0 40px #000000, 0 0 70px #000000, 0 0 80px rgb(0, 0, 0), 0 0 100px #000000, 0 0 150px #000000;
+			
+            z-index: 15;
+		}
+		.neon-text {
+  		animation: neon-animation 1.5s ease-in-out infinite alternate;
+		}
+
+		@keyframes neon-animation {
+  		from {
+    		text-shadow: 0 0 10px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #f5f5f5, 0 0 35px #fafafa;
+  		}
+		to {
+			text-shadow: 0 0 5px #fff;
+		}
+		}
+		
+		.history {
+			top: 2%;
+			bottom: 95%;
+			left: 35%;
+			font-family: 'Poppins', sans-serif;
+			padding: 2px 20px;
+            background-color: transparent;
+            color: #ffffff;
+            border: none;
+            border-radius: 10px;
+			text-align: center;
+            font-size: 18px;
+			text-shadow: 0 0 7px rgb(0, 0, 0), 0 0 20px #000000, 0 0 30px rgb(0, 0, 0), 0 0 40px #000000, 0 0 70px #000000, 0 0 80px rgb(0, 0, 0), 0 0 100px #000000, 0 0 150px #000000;
+            z-index: 15;
+		}
+		
+		.future {
+			position: fixed;
+			top: 2%;
+			bottom: 95%;
+			left: 55%;
+			font-family: 'Poppins', sans-serif;
+			padding: 2px 20px;
+            background-color: transparent;
+            color: #ffffff;
+            border: none;
+            border-radius: 10px;
+			text-align: center;
+            font-size: 18px;
+			text-shadow: 0 0 7px rgb(0, 0, 0), 0 0 20px #000000, 0 0 30px rgb(0, 0, 0), 0 0 40px #000000, 0 0 70px #000000, 0 0 80px rgb(0, 0, 0), 0 0 100px #000000, 0 0 150px #000000;
+            z-index: 15;
+		}
+		.gallery {
+			top: 2%;
+			bottom: 95%;
+			left: 75%;
+			font-family: 'Poppins', sans-serif;
+			padding: 2px 20px;
+            background-color: transparent;
+            color: #ffffff;
+            border: none;
+            border-radius: 10px;
+			text-align: center;
+            font-size: 18px;
+			text-shadow: 0 0 7px rgb(0, 0, 0), 0 0 20px #000000, 0 0 30px rgb(0, 0, 0), 0 0 40px #000000, 0 0 70px #000000, 0 0 80px rgb(0, 0, 0), 0 0 100px #000000, 0 0 150px #000000;
+
+            z-index: 15;
+		}
+		
+		.main:hover,
+		.future:hover,
+		.gallery:hover,
+        .history:hover {
+            text-shadow: 0 0 10px #fff, 0 0 10px #fff, 0 0 15px;
+        }
+		.explore-button:hover {
+    	transform: translateY(20px); /* Move the button up slightly on hover */
+		transition: transform 1.5s ease;
+		}
+		.explore-button:hover {
+  			opacity: 0.5;
+		}
+		
+		.fade-in {
+            opacity: 0;
+            animation: fadeInAnimation 1s ease-in forwards;
+        }
+        
+		@keyframes fadeInAnimation {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+		
+		@media screen and (orientation: portrait) {
+            .image-container {
+                height: 100%;
+            }
+        }
+	
+    </style>
+	
+	<link href='https://fonts.googleapis.com/css?family=Poppins' rel="stylesheet"/>
+</head>
+<body>
+    <div class="image-container">
+		
+		<img src="C:\Users\optim\OneDrive\Desktop\solar2.jpg" alt="galaxy">
+		<div class="fade-in">
+			<div class="text-overlay neon-text">SPACE EXPO 2025</div>
+			<div class="text-overlay1 neon-text">WELCOME TO</div>
+			<button onclick="scrollWin(0, 0)" class="main">Main</button>
+			<button onclick="" class="history">History</button>
+			<button onclick="" class="future">Future</button>
+			<button onclick="" class="gallery">Gallery</button>
+			<div class="explore-button" onclick="scrollToBottom()">
+				<i class="fas fa-chevron-down"></i> <!-- Font Awesome down arrow icon -->
+			</div>
+	</div>
+	<div class="container">
+		<h2>SPACE EXPO 2025</h2>
+		<p>Zlatibor is a mountain of exceptional beauty whose special geographical properties have made this mountain a real gem of western Serbia.</p>
+		<a href="#">Learn more</a>
+	  </div>
+	  
+	  <div class="blank"></div>
+	  
+	  <div class="container second">
+		<div class="item">
+		  <div class="img img-first"></div>
+		  <div class="card">
+			<h3>Rock climbing</h3>
+			<p>The goal is to reach the summit of a formation or the endpoint of a usually pre-defined route without falling</p>
+			<a href="#">Learn more</a>
+		  </div>
+		</div>
+		<div class="item">
+		  <div class="img img-second"></div>
+		  <div class="card">
+			<h3>Caving</h3>
+			<p>Exploring underground through networks of tunnels and passageways, which can be natural or artificial.</p>
+			<a href="#">Learn more</a>
+		  </div>
+		</div>
+		<div class="item">
+		  <div class="img img-third"></div>
+		  <div class="card">
+			<h3>Parachuting</h3>
+			<p>Jumping from an aeroplane and falling through the air before opening your parachute.</p>
+			<a href="#">Learn more</a>
+		  </div>
+		</div>
+	  </div>
+	  
+	  <div class="blank"></div>
+	  <div class="external">
+		<div class="horizontal-scroll-wrapper">
+		  <div class="img-wrapper slower">
+			<a href="https://altphotos.com/photo/stylish-parisian-cafe-terrace-279/" target="_blank" rel="noopener"><img src="https://img.freepik.com/free-photo/night-sky-glows-with-iridescent-deep-space-generative-ai_188544-11285.jpg?w=1060&t=st=1700489869~exp=1700490469~hmac=3d7a04279eec0e326dc0a4ccea02afb9d54725099d1350bb214253092ae556b5" alt="">
+			</a>
+		  </div>
+	  
+		  <div class="img-wrapper faster">
+			<a href="https://altphotos.com/photo/retro-boy-doll-wearing-elegant-clothes-330/" target="_blank" rel="noopener">
+			  <img src="space4.jpg" alt="">
+			</a>
+		  </div>
+	  
+		  <div class="img-wrapper slower vertical">
+			<a href="https://altphotos.com/photo/clocks-shop-exposition-window-reflecting-the-streets-277/" target="_blank" rel="noopener">
+			  <img src="space5.jpg" alt="">
+			</a>
+		  </div>
+	  
+		  <div class="img-wrapper slower slower-down">
+			<a href="https://altphotos.com/photo/swans-and-ducks-swimming-in-a-river-264/" target="_blank" rel="noopener">
+			  <img src="space6.jpg" alt="">
+			</a>
+		  </div>
+	  
+		  <div class="img-wrapper">
+			<a href="https://altphotos.com/photo/sidewalk-terrace-of-a-blue-facade-cafe-312/" target="_blank" rel="noopener">
+			  <img src="https://img.freepik.com/premium-photo/astronaut-surfing-nebula_777271-2178.jpg" alt="">
+			</a>
+		  </div>
+	  
+		  <div class="img-wrapper slower">
+			<a href="https://altphotos.com/photo/paris-waterfront-at-sunset-1555/" target="_blank" rel="noopener">
+			  <img src="https://img.freepik.com/premium-photo/beyond-cosmos-intrepid-astronaut-explores-classroom-space-defying-boundaries-ed_983420-28827.jpg" alt="">
+			</a>
+		  </div>
+	  
+		  <div class="img-wrapper faster1">
+			<a href="https://altphotos.com/photo/old-man-leaning-over-the-barrier-looking-at-the-river-265/" target="_blank" rel="noopener">
+			  <img src="https://img.freepik.com/free-photo/fictional-planet-with-colourful-night-sky-stars-nebula_1048-7926.jpg" alt="">
+			</a>
+		  </div>
+		  
+		  <div class="img-wrapper slower slower2">
+			<a href="https://altphotos.com/photo/cafe-terrace-with-a-row-of-retro-tables-261/" target="_blank" rel="noopener">
+			  <img src="https://img.freepik.com/free-photo/one-person-hiking-mountain-peak-admiring-milky-way-galaxy-generated-by-ai_24640-93611.jpg" alt="">
+			</a>
+		  </div>
+		  
+		  <div class="img-wrapper">
+			<a href="https://altphotos.com/photo/street-scene-with-pedestrians-and-dogs-318/" target="_blank" rel="noopener">
+			  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/74321/street-scene-people.jpg" alt="">
+			</a>
+		  </div>
+		  
+		  <div class="img-wrapper slower">
+			<a href="https://altphotos.com/photo/tourist-barge-on-the-river-seine-near-notre-dame-266/" target="_blank" rel="noopener">
+			  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/74321/notre-dame-river-boat.jpg" alt="">
+			</a>
+		  </div>
+		  
+		  <div class="img-wrapper slower last">
+			<a href="https://altphotos.com/photo/skulls-decoration-in-a-shop-window-331/" target="_blank" rel="noopener">
+			  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/74321/shop-window-reflection.jpg" alt="">
+			</a>
+		  </div>
+		</div>
+		<p class="scroll-info"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 100" ><path d="M50,67.1c-0.6,0-1.2-0.2-1.8-0.7c-3.8-3.8-7.7-7.7-11.5-11.5c-2.3-2.3,1.2-5.8,3.5-3.5c2.5,2.5,4.9,4.9,7.4,7.4      c0-13.7,0-27.4,0-41.2c0-0.6,0.2-1.2,0.5-1.5c0,0,0,0,0,0c0.4-0.6,1.1-1,2-0.9c13.7,0.3,26.4,7.2,33.5,19.1      C96.5,55.9,84.7,85,60.2,91.6C35.5,98.2,11.6,79.1,11.1,54c-0.1-3.2,4.9-3.2,5,0c0.3,13.8,8.4,26.4,21.3,31.5      c12.5,5,27.1,1.9,36.6-7.5c9.5-9.5,12.5-24.1,7.5-36.6c-4.8-12.1-16.3-20.1-29-21.2c0,12.8,0,25.5,0,38.3      c2.5-2.5,4.9-4.9,7.4-7.4c2.3-2.3,5.8,1.3,3.5,3.5c-3.9,3.9-7.8,7.8-11.8,11.8C51.2,66.9,50.6,67.1,50,67.1z"/></svg></span> Try scrolling down</p>
+		<header>
+		
+		</header>
+	  </div>
+	  <div id="parallax"></div>
+	</div>
+	
+
+
+		
+	<script>
+		let lastScrollTop = 0;
+		const exploreButton = document.querySelector('.explore-button');
+	
+		function scrollToBottom() {
+			exploreButton.style.opacity = 0;
+			setTimeout(() => {
+				exploreButton.style.display = 'none';
+			}, 500);
+			const imageContainer = document.querySelector('.image-container');
+			imageContainer.scrollTo({
+				top: imageContainer.scrollHeight,
+				behavior: 'smooth'
+			});
+		}
+	
+		function scrollWin(x, y) {
+			document.querySelector('.image-container').scrollTo({
+				top: 0,
+				left: 0,
+				behavior: 'smooth'
+			});
+		}
+	
+		window.addEventListener('scroll', () => {
+			const currentScroll = window.scrollY || window.pageYOffset;
+	
+			if (currentScroll > lastScrollTop) { // Scrolling down
+				exploreButton.style.opacity = 0;
+				exploreButton.style.display = 'none';
+			} else { // Scrolling up
+				exploreButton.style.opacity = 1;
+				exploreButton.style.display = 'block';
+			}
+	
+			lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+		});
+	</script>
+	<script>
+		(function() {
+    // Add event listener
+    document.addEventListener("mousemove", parallax);
+    const elem = document.querySelector("#parallax");
+    // Magic happens here
+    function parallax(e) {
+        let _w = window.innerWidth/2;
+        let _h = window.innerHeight/2;
+        let _mouseX = e.clientX;
+        let _mouseY = e.clientY;
+        let _depth1 = `${50 - (_mouseX - _w) * 0.01}% ${50 - (_mouseY - _h) * 0.01}%`;
+        let _depth2 = `${50 - (_mouseX - _w) * 0.02}% ${50 - (_mouseY - _h) * 0.02}%`;
+        let _depth3 = `${50 - (_mouseX - _w) * 0.06}% ${50 - (_mouseY - _h) * 0.06}%`;
+        let x = `${_depth3}, ${_depth2}, ${_depth1}`;
+        console.log(x);
+        elem.style.backgroundPosition = x;
+    }
+
+})();
+	</script>
+	
+	
+</body>
+
+</html>
