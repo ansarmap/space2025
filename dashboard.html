@@ -1,17 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Dashboard</title>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #232020;
+      display: flex;
+      justify-content: left;
+      align-items: flex-start;
+      height: 100vh;
+    }
+
+    .rectangle {
+      width: 300px;
+      height: 100%;
+      background-color: black;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border-radius: 25px;
+      color: white;
+      font-size: 24px;
+    }
+
+    .upload-box {
+      margin-top: 0vh;
+      margin-bottom: 3vh;
+      position: relative; /* Set container as relative */
+      width: 275px;
+      height: 380px;
+      background-color: rgb(35, 38, 41);
+      border-radius: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: black;
+      font-size: 24px;
+      box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.5);
+    }
+    
+    .normalbox {
+      margin-top: 3vh;
+      box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.5);
+      margin-bottom: 20px;
+      width: 275px;
+      height: 280px;
+      background-color: rgb(35, 38, 41);
+      border-radius: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: black;
+      font-size: 24px;
+    }
+	.awsomefont {
+		width: 50px;
+		height: 50px;
+	}
+	.sendbox {
+      margin-top: 90vh;
+	  margin-left: 20px;
+      box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.5);
+      width: 900px;
+      height: 45px;
+      background-color: rgb(35, 38, 41);
+      border-radius: 12px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: black;
+      font-size: 24px;
+    }
+    
+    .searchbar {
+      position: absolute; /* Position search bar */
+      top: 3vh; /* Adjust distance from the bottom */
+      width: 240px;
+      height: 30px;
+      border-radius: 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: black;
+      font-size: 24px;
+      box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.5);
+    }
+	.uploadimg {
+		height: 150px;
+		width: 150px;
+		margin-left: 11.3vh;
+		filter: invert(1);
+		filter: contrast(0.2)
+	}
+	.text {
+		font-size: 14px;
+		font-weight: lighter;
+		margin-right: 75px;
+		font-family: 'Poppins', sans-serif;
+		color: white;
+		
+	}
+	.search-input {
+      flex: 1;
+	  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.5);
+	  background-color: rgb(35, 38, 41);
+      border-radius: 15px;
+      border: none;
+	  color: rgba(255, 255, 255, 0.6);
+      outline: none;
+      padding: 8px 12px;
+      font-size: 16px;
+    }
+	
+	.send-input {
+    flex: 1;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.5);
+    background-color: rgb(35, 38, 41);
+    border-radius: 12px;
+    border: none;
+    color: rgba(255, 255, 255, 0.6);
+    outline: none;
+    padding: 13px 0px 12px 12px; 
+    font-size: 16px;
+    /* Other desired styles */
+}
+    
+	input[type='file'] {
+      position: relative;
+      opacity: 0;
+      cursor: pointer;
+    }
+	.send-btn {
+      background-color: rgba(255, 255, 255, 0.3);
+      color: rgb(255, 255, 255);
+      border: none;
+	  margin-left: 0vh;
+      border-radius: 9px;
+      padding: 8px 10px;
+      cursor: pointer;
+    }
+	.normalbox:hover {
+      cursor: pointer;
+	  opacity: 0.9;
+    }
+	.send-text {
+    margin-right: 10px; /* Adjust margin as needed */
+    color: white; /* Text color */
+    font-size: 18px; /* Font size */
+    font-weight: bold; /* Font weight */
+    /* Other desired styles */
+}
+	.searchbar:hover {
+		cursor: pointer;
+		opacity: 0.4;
+	}
+	.send-btn:hover {
+		cursor: pointer;
+		opacity: 0.9;
+	}
+  </style>
+  <meta charset="UTF-8">
+  <title>Rectangle Box</title>
 </head>
 <body>
-    hello
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const authenticated = localStorage.getItem('authenticated');
-      if (authenticated !== 'true') {
-        window.location.href = 'index.html'; // Redirect to login page if not authenticated
-      }
-    });
-  </script>
+  
+  <div class="rectangle">
+	
+    <label class="normalbox">
+		<img class="uploadimg" src="C:\Users\optim\Downloads\—Pngtree—file upload icon_4717174.png" alt="upload">
+		<input type="file" id="file-upload" accept="image/*" multiple>
+	</label>
+	
+    <div class="upload-box">
+      <div class="searchbar">
+		<input class="search-input" type="text" id="search" placeholder="Search for symptoms" >
+	  </div>
+	  
+    </div>
+	
+  </div>
+  
+  <div class="sendbox">
+    <input type="text" class="send-input" placeholder="Let's talk">
+    <button type="submit" class="send-btn"><i class="fas fa-arrow-up"></i></button>
+</div>
+
+  
 </body>
 </html>
